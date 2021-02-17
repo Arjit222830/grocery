@@ -4,17 +4,17 @@ export const SidebarData =[
     {
         title:'Home',
         icon: <HomeOutlinedIcon fontSize='large' />,
-        link:'/home'
+        link:'/'
     },
     {
-        title:'MailBox',
+        title:'Create',
         icon:<HomeOutlinedIcon fontSize='large' />,
-        link:'/'
+        link:'/create'
     },
     {
         title:'Login',
         icon:<HomeOutlinedIcon fontSize='large' />,
-        link:'/hel'
+        link:'/login'
     },
     {
         title:'SignUp',

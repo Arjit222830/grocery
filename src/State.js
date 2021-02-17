@@ -3,7 +3,7 @@ import React, {createContext,useReducer} from "react";
 const AppContext= createContext({});
 
 const initialState= {
-    openSidebar: false
+    openSidebar: true
 }
 
 const reducer= (state, action)=>{
