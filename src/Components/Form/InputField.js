@@ -22,8 +22,6 @@ const InputField= forwardRef((props,ref)=>{
         props.onChange(event.target.name, event.target.value);
     }
 
-
-
     useImperativeHandle(ref, ()=>{
         return {
             validate: ()=> Validation(props,value,setError,dispatch)
@@ -34,7 +32,7 @@ const InputField= forwardRef((props,ref)=>{
         if(state.openSidebar)
             return {width:'70vw', transition: 'width 1s'};
         
-        return {width:'85vw', transition: 'width 1s'};
+        return {width:'90vw', transition: 'width 1s'};
     }
 
     if(!state)

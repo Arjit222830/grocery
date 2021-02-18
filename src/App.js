@@ -6,8 +6,8 @@ import Grid from '@material-ui/core/Grid';
 
 import Sidebar from './Components/SideBar/Sidebar';
 import Home from './pages/Home';
-import Create from './pages/Create';
 import Edit from './pages/Edit';
+import Create from './pages/Create';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -28,11 +28,11 @@ const App = ()=>{
       <Router>
         <Grid container className={classes.root} spacing={2}>
           <Grid item>
-            <Grid container justify="left" spacing="6">
+            <Grid container spacing={6}>
               <Grid key="h" item >
                   <Sidebar />
               </Grid>
-              <Grid key="h"  item>
+              <Grid key="ho"  item>
                 <Switch>
                   <Route path="/"  exact component= {Home} />
                   <Route path="/create" exact component= {Create} />

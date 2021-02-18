@@ -17,8 +17,8 @@ export const SidebarData =[
         link:'/edit'
     },
     {
-        title:'SignUp',
+        title:'Cr',
         icon:<HomeOutlinedIcon fontSize='large' />,
-        link:'/home'
+        link:'/cr'
     }
 ];

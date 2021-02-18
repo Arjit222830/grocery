@@ -1,5 +1,5 @@
-import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
+import React,{useContext} from 'react';
+import { Link } from "react-router-dom";
 import Card from '@material-ui/core/Card';
 import CardActionArea from '@material-ui/core/CardActionArea';
 import CardActions from '@material-ui/core/CardActions';
@@ -8,17 +8,24 @@ import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 
-const useStyles = makeStyles({
-  root: {
-    width: 350
-  }
-});
+import {AppContext} from "../State";
+
+
 
 const Cards = () =>{
-  const classes = useStyles();
+
+  const {state, dispatch}=  useContext(AppContext);
+
+
+  const styleWidth=()=>{
+    if(state.openSidebar)
+        return {width:'300px', transition: 'width 1s'};
+    
+    return {width:'425px', transition: 'width 1s'};
+  }
 
   return (
-    <Card className={classes.root}>
+    <Card  style={styleWidth()}>
       <CardActionArea>
         <CardMedia
           component="img"
@@ -33,10 +40,12 @@ const Cards = () =>{
           </Typography>
         </CardContent>
       </CardActionArea>
-      <CardActions className="text-center">
-        <Button size="small" color="primary">
-          Edit
-        </Button>
+      <CardActions>
+        <Link to="/edit" className="col-6 direction">
+          <Button size="small" color="primary">
+            Edit
+          </Button>
+        </Link>
         <Button size="small" color="primary">
           Delete
         </Button>
