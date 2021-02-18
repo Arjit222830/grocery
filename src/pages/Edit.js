@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 
+import Title from '../Components/Title';
 import Form from '../Components/Form/Form';
 import {formData} from '../helpers/formData';
 
@@ -20,6 +21,7 @@ const Edit= (props)=>{
     
     return (
         <>
+            <Title />
             <Form props={props} formData={formData} />
         </>
     );

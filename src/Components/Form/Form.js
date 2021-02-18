@@ -2,7 +2,6 @@ import React,{useState, useContext, useRef, createRef} from 'react';
 import {AppContext} from "../../State";
 
 import InputField from './InputField';
-import Title from '../Title';
 
 import '../../App.css'
 
@@ -61,7 +60,6 @@ const Form = (props)=>{
     const FormInfo= ()=>{
         var j=0;
         return props.formData.map((ob,index)=>{
-            console.log(ob);
             return (
                 <InputField
                     key={index}
@@ -80,7 +78,6 @@ const Form = (props)=>{
 
     return (
         <>
-            <Title />
 
             <div className="form" style={{paddingBottom:'10vh'}}>
                 {state.err &&  (

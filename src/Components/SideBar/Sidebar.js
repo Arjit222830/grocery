@@ -1,10 +1,12 @@
-import React,{useContext} from "react";
+import React,{useState,useContext} from "react";
 import {Link,  useLocation} from 'react-router-dom';
 
 import {SidebarData} from '../../helpers/SidebarData';
 
 import ArrowForwardIosIcon from '@material-ui/icons/ArrowForwardIos';
 import ViewHeadlineIcon from '@material-ui/icons/ViewHeadline';
+import ArrowDropDownIcon from '@material-ui/icons/ArrowDropDown';
+import ArrowDropUpTwoToneIcon from '@material-ui/icons/ArrowDropUpTwoTone';
 
 import {AppContext} from "../../State";
 import {openSidebar} from "../../actions";
@@ -12,9 +14,33 @@ import './Sidebar.css';
 
 const Sidebar= (props)=>{
 
+    const location = useLocation();
     const {state, dispatch}=  useContext(AppContext);
 
-    const location = useLocation();
+    const [subNav,setSubNav]= useState(false);
+
+    const showSubNav = ()=> setSubNav(!subNav); 
+
+    const sidebarItems= (item,className)=>{
+        return (
+            <li className={className} id={location.pathname==item.link?"active":"non-active"}>
+                <div className="icon">
+                    {item.icon}
+                </div>
+            
+                <div className="title">
+                    {item.title}
+                </div>
+                {item.children && !subNav && ( 
+                    <ArrowDropDownIcon id="top-icon" fontSize='large' color='primary' style={{color:'white',fontSize: '20px'}} />
+                )}
+                {item.children && subNav && ( 
+                    <ArrowDropUpTwoToneIcon id="top-icon" fontSize='large' color='primary' style={{color:'white',fontSize: '20px'}} />
+                )}
+            </li>
+        );
+    }
+
 
     if(!state.openSidebar)
         return (
@@ -29,17 +55,18 @@ const Sidebar= (props)=>{
             <ul className="sidebar-list">
                 {SidebarData.map((val,key)=>{
                     return (
-                        <Link to={val.link} key={key}>
-                            <li className="sidebar-list-row" id={location.pathname==val.link?"active":"non-active"}>
-                                <div id="icon">
-                                    {val.icon}
-                                </div>
-                             
-                                <div id="title">
-                                    {val.title}
-                                </div>
-                            </li>
-                        </Link>
+                        <>
+                            <Link to={val.link} onClick={val.children && showSubNav} key={key}>
+                                {sidebarItems(val,"sidebar-list-row")}
+                            </Link>
+                            {val.children && subNav && val.children.map((item,key)=>{
+                                return (
+                                    <Link to={item.link} key={key}>
+                                       {sidebarItems(item,"submenu-list-row")}
+                                    </Link>
+                                );
+                            })}
+                        </>
                     );
                 })
                 }

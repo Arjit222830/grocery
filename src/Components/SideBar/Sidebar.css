@@ -48,14 +48,33 @@
   background-color: rgb(26, 150, 1);
 }
 
-#icon
+.submenu
+{
+  display: flex;
+}
+
+.submenu-list-row
+{
+  width: 250px;
+  height: 40px;
+  list-style-type: none;
+  padding-left: 30px;
+  display: flex;
+  flex-direction: row;
+  color: white;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.icon
 {
   flex: 30%;
   display: grid;
   place-items: center;
 }
 
-#title
+.title
 {
   flex: 70%;
 }

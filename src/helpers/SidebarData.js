@@ -9,7 +9,19 @@ export const SidebarData =[
     {
         title:'Categories',
         icon:<HomeOutlinedIcon fontSize='large' />,
-        link:'/categories'
+        link:'/categories',
+        children: [
+            {
+                title:'sub1',
+                icon:<HomeOutlinedIcon fontSize='large' />,
+                link:'/categories/sub1',
+            },
+            {
+                title:'sub1',
+                icon:<HomeOutlinedIcon fontSize='large' />,
+                link:'/categories/sub2',
+            }
+        ]
     },
     {
         title:'Create',
