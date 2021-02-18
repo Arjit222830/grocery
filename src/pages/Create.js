@@ -1,17 +1,24 @@
 import React from 'react';
 
 import Form from '../Components/Form/Form';
+import {formData} from '../helpers/formData';
 
 import '../App.css'
 
 const Create = (props)=>{ 
 
-    const value1='';
-    const value2='';
-    
+    const setInitialValues=()=>{
+        for(var i=0;i<formData.length;i++)
+            formData[i].initial_value='';
+
+        console.log(formData);
+    }
+
+    setInitialValues();
+
     return (
         <>
-            <Form props={props} initialData={{username:value1,password:value2}} value1={value1} value2={value2} />
+            <Form props={props} formData={formData} />
         </>
     );
 }

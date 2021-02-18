@@ -8,25 +8,15 @@ import Sidebar from './Components/SideBar/Sidebar';
 import Home from './pages/Home';
 import Edit from './pages/Edit';
 import Create from './pages/Create';
-
-const useStyles = makeStyles((theme) => ({
-    root: {
-      flexGrow: 2,
-    },
-    control: {
-      padding: theme.spacing(2),
-    },
-  })
-);
+import Categories from './pages/Categories';
 
 const App = ()=>{
-  const classes = useStyles();
 
   //Switch deals with the problem associated with wildcard (:id) navigation
   return (
     <div className="App" >
       <Router>
-        <Grid container className={classes.root} spacing={2}>
+        <Grid container spacing={2}>
           <Grid item>
             <Grid container spacing={6}>
               <Grid key="h" item >
@@ -35,6 +25,7 @@ const App = ()=>{
               <Grid key="ho"  item>
                 <Switch>
                   <Route path="/"  exact component= {Home} />
+                  <Route path="/categories" exact component= {Categories} />
                   <Route path="/create" exact component= {Create} />
                   <Route path="/edit" exact component= {Edit} />
                 </Switch>

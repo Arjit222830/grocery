@@ -6,7 +6,7 @@ import Title from '../Components/Title';
 import '../App.css';
 
   
-const Home= ()=> {
+const Categories= ()=> {
 
     return (
         <div className="container-fluid text-center">
@@ -32,4 +32,4 @@ const Home= ()=> {
     );
 }
 
-export default Home;
+export default Categories;

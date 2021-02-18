@@ -1,17 +1,26 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
 import Form from '../Components/Form/Form';
+import {formData} from '../helpers/formData';
 
 import '../App.css'
 
-const Edit = (props)=>{ 
+const Edit= (props)=>{ 
 
-    const value1='dsdx';
-    const value2='cdscd';
+    const setInitialValues=()=>{
+        for(var i=0;i<formData.length;i++){
+            if(formData[i].type!="file")
+                formData[i].initial_value='213';
+        }
+
+        console.log(formData);
+    }
+
+    setInitialValues();
     
     return (
         <>
-            <Form props={props} initialData={{username:value1,password:value2}} value1={value1} value2={value2} />
+            <Form props={props} formData={formData} />
         </>
     );
 }

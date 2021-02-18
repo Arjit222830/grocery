@@ -7,14 +7,14 @@ export const SidebarData =[
         link:'/'
     },
     {
+        title:'Categories',
+        icon:<HomeOutlinedIcon fontSize='large' />,
+        link:'/categories'
+    },
+    {
         title:'Create',
         icon:<HomeOutlinedIcon fontSize='large' />,
         link:'/create'
-    },
-    {
-        title:'Edit',
-        icon:<HomeOutlinedIcon fontSize='large' />,
-        link:'/edit'
     },
     {
         title:'Cr',

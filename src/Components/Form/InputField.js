@@ -14,8 +14,10 @@ const InputField= forwardRef((props,ref)=>{
     const [value, setValue]= useState(props.value);
     const [error,setError]= useState('');
 
+    console.log(state);
 
     const handleChange= (event)=>{
+        console.log(event.target.value);
         setValue(event.target.value);
         setError('');
         dispatch(err(false));
@@ -51,7 +53,7 @@ const InputField= forwardRef((props,ref)=>{
                 onChange={(e)=> handleChange(e)} 
                 type={props.type} 
                 value={value} 
-                autoComplete={props.autoComplete}
+                autoComplete= 'off'
                 style={styleWidth()}
             />
             {error &&  (

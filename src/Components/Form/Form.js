@@ -10,16 +10,32 @@ const Form = (props)=>{
     
     const {state, dispatch}=  useContext(AppContext);
 
-    const inputRefs= useRef([
-        createRef(),createRef()
-    ]);
+    const arrayRefs=()=>{
+        var ar=[];
+        for(var i=0;i<props.formData.length;i++)
+            ar.push(createRef());
 
-    const [data,setData]= useState(props.initialData);
+        return ar;
+    }
+
+    const initialState= ()=>{
+        var object={};
+        for(var i=0;i<props.formData.length;i++)
+            object= {...object,[props.formData[i].name]:props.formData[i].initial_value}
+
+        return object;
+    }
+
+    const inputRefs= useRef(arrayRefs());
+
+    const [data,setData]= useState(initialState);
 
     const handleChange = (name, value)=>{
-        setData(prev=> ({
+        setData(prev=> {
+            console.log({...prev, [name]:value})
+        return ({
             ...prev, [name]:value
-        }));
+        })});
     }
 
     console.log(data);
@@ -38,6 +54,28 @@ const Form = (props)=>{
         if(!isValid)
             return ;
 
+        console.log('Submitted')
+
+    }
+
+    const FormInfo= ()=>{
+        var j=0;
+        return props.formData.map((ob,index)=>{
+            console.log(ob);
+            return (
+                <InputField
+                    key={index}
+                    ref={inputRefs.current[j++]}
+                    name={ob.name}
+                    label={ob.label}
+                    type={ob.type}
+                    placeholder={ob.placeholder}
+                    value={ob.initial_value}
+                    onChange= {handleChange}
+                    validation=  {ob.validation}
+                />
+            )
+        });
     }
 
     return (
@@ -50,26 +88,9 @@ const Form = (props)=>{
                         Please fill correct details
                     </p>
                 )}
-                <form onSubmit={submitForm}>
-                    <InputField
-                        ref={inputRefs.current[0]}
-                        name="username"
-                        label="Username"
-                        placeholder="Enter a username"
-                        value={props.value1}
-                        onChange= {handleChange}
-                        validation= "required|min:6|max:12"
-                    />
-                    <InputField
-                        ref={inputRefs.current[1]}
-                        name="password"
-                        label="Password"
-                        placeholder="Enter a password"
-                        value={props.value2}
-                        onChange= {handleChange}
-                        validation= "required|min:6|max:12"
-                    />
 
+                <form onSubmit={submitForm}>
+                    {FormInfo()}
                     <button type="submit">Submit</button>
                 </form>
             </div>

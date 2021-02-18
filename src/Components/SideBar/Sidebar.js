@@ -1,7 +1,7 @@
 import React,{useContext} from "react";
 import {Link,  useLocation} from 'react-router-dom';
 
-import {SidebarData} from './SidebarData';
+import {SidebarData} from '../../helpers/SidebarData';
 
 import ArrowForwardIosIcon from '@material-ui/icons/ArrowForwardIos';
 import ViewHeadlineIcon from '@material-ui/icons/ViewHeadline';
