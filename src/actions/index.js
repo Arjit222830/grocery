@@ -5,3 +5,10 @@ export const openSidebar= (flag)=>{
         payload:flag
     }
 }
+
+export const err= (value)=>{
+    return {
+        type: "setError",
+        payload:value
+    }
+}

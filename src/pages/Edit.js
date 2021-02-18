@@ -5,8 +5,9 @@ import InputField from '../Components/Form/InputField';
 import Title from '../Components/Title';
 
 import '../App.css'
+import { EditLocationRounded, EditLocationSharp, EditLocationTwoTone } from '@material-ui/icons';
 
-const Create = (props)=>{ 
+const Edit = (props)=>{ 
     
     console.log(props);
     const {state, dispatch}=  useContext(AppContext);
@@ -55,7 +56,7 @@ const Create = (props)=>{
                         name="username"
                         label="Username"
                         placeholder="Enter a username"
-                        value=''
+                        value='asd'
                         onChange= {handleChange}
                         validation= "required|min:6|max:12"
                     />
@@ -64,7 +65,7 @@ const Create = (props)=>{
                         name="password"
                         label="Password"
                         placeholder="Enter a password"
-                        value=''
+                        value='123'
                         onChange= {handleChange}
                         validation= "required|min:6|max:12"
                     />
@@ -76,4 +77,4 @@ const Create = (props)=>{
     );
 }
 
-export default Create;
+export default Edit;

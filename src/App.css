@@ -1,66 +1,12 @@
-.sidebar
+.head
 {
-  height : 100vh;
-  width : 250px;
-  background-color: #2F4050;
-  transition: width 1s;
+  color: rgb(255, 197, 7);
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-size: 100px;
+  font-style: italic;
 }
 
-.no-sidebar
+.error
 {
-  height : 100vh;
-  width : 0;
-  background-color: #2F4050;
-  transition: width 1s;
-}
-
-.sidebar-list
-{
-  height: auto;
-  width: 100vw;
-  padding: 0;
-  padding-top: 5vh;
-}
-
-.sidebar-list-row
-{
-  width: 250px;
-  height: 50px;
-  border: 0.5px solid white;
-  list-style-type: none;
-  margin: 0;
-  display: flex;
-  flex-direction: row;
-  color: white;
-  justify-content: center;
-  align-items: center;
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-}
-
-.sidebar-list-row:hover
-{
-  cursor: pointer;
-  background-color: rgb(26, 150, 1);
-}
-
-.sidebar-list #active
-{
-  background-color: rgb(26, 150, 1);
-}
-
-#icon
-{
-  flex: 30%;
-  display: grid;
-  place-items: center;
-}
-
-#title
-{
-  flex: 70%;
-}
-
-#top-icon:hover
-{
-  cursor: pointer;
+  color: rgb(189, 9, 9);
 }

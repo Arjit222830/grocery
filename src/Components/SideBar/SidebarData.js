@@ -12,9 +12,9 @@ export const SidebarData =[
         link:'/create'
     },
     {
-        title:'Login',
+        title:'Edit',
         icon:<HomeOutlinedIcon fontSize='large' />,
-        link:'/login'
+        link:'/edit'
     },
     {
         title:'SignUp',

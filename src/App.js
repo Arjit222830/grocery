@@ -7,21 +7,16 @@ import Grid from '@material-ui/core/Grid';
 import Sidebar from './Components/SideBar/Sidebar';
 import Home from './pages/Home';
 import Create from './pages/Create';
-
-import { Container,Row,Col } from 'react-bootstrap';
-
-import './App.css';
-import { Collapse } from 'bootstrap';
+import Edit from './pages/Edit';
 
 const useStyles = makeStyles((theme) => ({
-  root: {
-    flexGrow: 2,
-  },
-  control: {
-    padding: theme.spacing(2),
-  },
-}
-)
+    root: {
+      flexGrow: 2,
+    },
+    control: {
+      padding: theme.spacing(2),
+    },
+  })
 );
 
 const App = ()=>{
@@ -32,15 +27,16 @@ const App = ()=>{
     <div className="App" >
       <Router>
         <Grid container className={classes.root} spacing={2}>
-          <Grid item xs={12}>
+          <Grid item>
             <Grid container justify="left" spacing="6">
-              <Grid key="h" item>
+              <Grid key="h" item >
                   <Sidebar />
               </Grid>
-              <Grid key="h" item>
+              <Grid key="h"  item>
                 <Switch>
-                  <Route path="/"  exact={true} component= {Home} />
-                  <Route path="/create" component= {Create} />
+                  <Route path="/"  exact component= {Home} />
+                  <Route path="/create" exact component= {Create} />
+                  <Route path="/edit" exact component= {Edit} />
                 </Switch>
               </Grid>
             </Grid>
@@ -48,7 +44,7 @@ const App = ()=>{
         </Grid>
       </Router>
     </div>
-  );    ``
+  );
 }
 
 export default App;

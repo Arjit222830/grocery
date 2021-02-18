@@ -3,14 +3,16 @@ import React, {createContext,useReducer} from "react";
 const AppContext= createContext({});
 
 const initialState= {
-    openSidebar: true
+    openSidebar: true,
+    err: false
 }
 
 const reducer= (state, action)=>{
     switch (action.type){
         case "setOpenSidebar":
             return {...state, openSidebar: action.payload};
-            
+        case "setError":
+            return {...state, err: action.payload};
         default:
             return {...state};
     }
