@@ -10,3 +10,9 @@
 {
   color: rgb(189, 9, 9);
 }
+
+.select
+{
+  height: 30px;
+  background-color: red;
+}

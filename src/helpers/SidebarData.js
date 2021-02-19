@@ -12,12 +12,12 @@ export const SidebarData =[
         link:'/categories',
         children: [
             {
-                title:'sub1',
+                title:'Sub1',
                 icon:<HomeOutlinedIcon fontSize='large' />,
                 link:'/categories/sub1',
             },
             {
-                title:'sub1',
+                title:'Sub2',
                 icon:<HomeOutlinedIcon fontSize='large' />,
                 link:'/categories/sub2',
             }
@@ -27,10 +27,5 @@ export const SidebarData =[
         title:'Create',
         icon:<HomeOutlinedIcon fontSize='large' />,
         link:'/create'
-    },
-    {
-        title:'Cr',
-        icon:<HomeOutlinedIcon fontSize='large' />,
-        link:'/cr'
     }
 ];

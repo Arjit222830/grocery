@@ -10,12 +10,9 @@ import Typography from '@material-ui/core/Typography';
 
 import {AppContext} from "../State";
 
-
-
 const Cards = () =>{
 
   const {state, dispatch}=  useContext(AppContext);
-
 
   const styleWidth=()=>{
     if(state.openSidebar)

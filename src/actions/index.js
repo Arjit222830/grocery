@@ -12,3 +12,16 @@ export const err= (value)=>{
         payload:value
     }
 }
+
+export const signIn = (user)=>{
+    return {
+        type: "signIn",
+        payload: user
+    }
+};
+
+export const signOut = ()=>{
+    return {
+        type: "signOut"
+    }
+};

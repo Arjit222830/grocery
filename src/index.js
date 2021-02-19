@@ -8,8 +8,6 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 import {AppContextProvider} from './State';
 
-
-
 const RootComponent = ()=>{
     return (
       <React.StrictMode>

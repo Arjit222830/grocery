@@ -55,8 +55,8 @@ const Sidebar= (props)=>{
             <ul className="sidebar-list">
                 {SidebarData.map((val,key)=>{
                     return (
-                        <>
-                            <Link to={val.link} onClick={val.children && showSubNav} key={key}>
+                        <div key={key}>
+                            <Link to={val.link} onClick={val.children && showSubNav}>
                                 {sidebarItems(val,"sidebar-list-row")}
                             </Link>
                             {val.children && subNav && val.children.map((item,key)=>{
@@ -66,7 +66,7 @@ const Sidebar= (props)=>{
                                     </Link>
                                 );
                             })}
-                        </>
+                        </div>
                     );
                 })
                 }

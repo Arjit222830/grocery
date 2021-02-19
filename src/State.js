@@ -4,7 +4,9 @@ const AppContext= createContext({});
 
 const initialState= {
     openSidebar: true,
-    err: false
+    err: false,
+    isSignedIn: null,
+    username: null
 }
 
 const reducer= (state, action)=>{
@@ -13,6 +15,10 @@ const reducer= (state, action)=>{
             return {...state, openSidebar: action.payload};
         case "setError":
             return {...state, err: action.payload};
+        case "signIn": 
+            return {...state, isSignedIn: true, username: action.payload.name, email:action.payload.email, userId: action.payload.Id};
+        case "signOut":
+            return {...state, isSignedIn: false, username: null};
         default:
             return {...state};
     }

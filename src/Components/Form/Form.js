@@ -27,7 +27,7 @@ const Form = (props)=>{
 
     const inputRefs= useRef(arrayRefs());
 
-    const [data,setData]= useState(initialState);
+    const [data,setData]= useState(initialState());
 
     const handleChange = (name, value)=>{
         setData(prev=> {
@@ -53,7 +53,7 @@ const Form = (props)=>{
         if(!isValid)
             return ;
 
-        console.log('Submitted')
+    console.log(data);
 
     }
 
@@ -69,17 +69,18 @@ const Form = (props)=>{
                     type={ob.type}
                     placeholder={ob.placeholder}
                     value={ob.initial_value}
+                    enum={ob.enum}
                     onChange= {handleChange}
                     validation=  {ob.validation}
                 />
-            )
+            );
         });
     }
 
     return (
         <>
 
-            <div className="form" style={{paddingBottom:'10vh'}}>
+            <div className="ui form" style={{paddingBottom:'10vh'}}>
                 {state.err &&  (
                     <p className="error" style={{textAlign:'center'}}>
                         Please fill correct details

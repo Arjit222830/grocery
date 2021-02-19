@@ -14,14 +14,11 @@ const InputField= forwardRef((props,ref)=>{
     const [value, setValue]= useState(props.value);
     const [error,setError]= useState('');
 
-    console.log(state);
-
     const handleChange= (event)=>{
-        console.log(event.target.value);
         setValue(event.target.value);
         setError('');
         dispatch(err(false));
-        props.onChange(event.target.name, event.target.value);
+        props.onChange(event.target.name,event.target.value );
     }
 
     useImperativeHandle(ref, ()=>{
@@ -37,25 +34,38 @@ const InputField= forwardRef((props,ref)=>{
         return {width:'90vw', transition: 'width 1s'};
     }
 
-    if(!state)
-        return;
+    const selection= ()=>{
+        if(props.type=='select')
+            return (
+                <select name={props.name} style={styleWidth()} onChange={(e)=>handleChange(e)}>
+                    <option value=""></option>
+                    {props.enum.map((item,key)=>{
+                        return <option value={item} key={key}>{item}</option>
+                    })}
+                </select>
+            );
+
+        return (
+            <Input
+                fluid 
+                size='big'
+                placeholder={props.placeholder} 
+                name={props.name} 
+                onChange={(e)=> handleChange(e,props)} 
+                type={props.type} 
+                value={value} 
+                autoComplete= 'off'
+                style={styleWidth()}
+            />
+        );
+    }
 
     return (
         <div>
             {props.label && (
                 <label>{props.label}</label>
             )}
-            <Input
-                fluid 
-                size='big'
-                placeholder={props.placeholder} 
-                name={props.name} 
-                onChange={(e)=> handleChange(e)} 
-                type={props.type} 
-                value={value} 
-                autoComplete= 'off'
-                style={styleWidth()}
-            />
+            {selection()}
             {error &&  (
                 <p className="error">
                     {error}

@@ -1,6 +1,8 @@
 import React from 'react';
 import Paper from '@material-ui/core/Paper'
 
+import GoogleAuth  from './GoogleAuth';
+
 import '../App.css';
   
 const Title= ()=> {
