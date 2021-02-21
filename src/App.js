@@ -26,7 +26,7 @@ const App = ()=>{
                   <Route path="/"  exact component= {Home} />
                   <Route path="/categories/:id" exact component= {Products} />
                   <Route path="/create" exact component= {Create} />
-                  <Route path="/edit" exact component= {Edit} />
+                  <Route path="/edit/:id" exact component= {Edit} />
                 </Switch>
               </Grid>
             </Grid>

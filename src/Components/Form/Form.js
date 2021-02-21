@@ -1,11 +1,16 @@
 import React,{useState, useContext, useRef, createRef} from 'react';
-import {AppContext} from "../../State";
+import { useHistory } from "react-router-dom";
 
+import {AppContext} from "../../State";
 import InputField from './InputField';
+import {createProduct} from '../../actions';
+import {editProduct} from '../../actions';
 
 import '../../App.css'
 
 const Form = (props)=>{ 
+
+    let history = useHistory();
     
     const {state, dispatch}=  useContext(AppContext);
 
@@ -39,7 +44,7 @@ const Form = (props)=>{
 
     console.log(data);
 
-    const submitForm= (e)=>{
+    const submitForm= async(e)=>{
         e.preventDefault();
         let isValid= true;
         for(let i=0;i<inputRefs.current.length;i++){
@@ -53,7 +58,12 @@ const Form = (props)=>{
         if(!isValid)
             return ;
 
-    console.log(data);
+        if(props.action=='create')
+            dispatch(await createProduct(data));
+        else
+            dispatch(await editProduct(props.id,data));
+
+        history.push('/');
 
     }
 

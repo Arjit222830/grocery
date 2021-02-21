@@ -9,8 +9,6 @@ const GoogleAuth= ()=> {
 
     const {state, dispatch}=  useContext(AppContext);
 
-    console.log(state);
-
     useEffect(()=>{
         window.gapi.load('client:auth2', ()=>{
             window.gapi.client.init({

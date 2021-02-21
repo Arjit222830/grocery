@@ -1,0 +1,19 @@
+{
+    "configurations": [
+        {
+            "type": "aws-sam",
+            "request": "direct-invoke",
+            "name": "Desktop:src/actions/index.err (nodejs10.x)",
+            "invokeTarget": {
+                "target": "code",
+                "projectRoot": "\\Users\\Lucky\\Desktop\\grocery",
+                "lambdaHandler": "src/actions/index.err"
+            },
+            "lambda": {
+                "runtime": "nodejs10.x",
+                "payload": {},
+                "environmentVariables": {}
+            }
+        }
+    ]
+}

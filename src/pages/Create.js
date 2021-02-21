@@ -30,7 +30,7 @@ const Create= (props)=>{
         <>
             <GoogleAuth />
             <Title />
-            <Form props={props} formData={formData} />
+            <Form props={props} formData={formData} action='create' />
         </>
     );
 }
