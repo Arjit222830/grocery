@@ -14,12 +14,12 @@ export const SidebarData =[
             {
                 title:'Sub1',
                 icon:<HomeOutlinedIcon fontSize='large' />,
-                link:'/categories/sub1',
+                link:'/categories/1',
             },
             {
                 title:'Sub2',
                 icon:<HomeOutlinedIcon fontSize='large' />,
-                link:'/categories/sub2',
+                link:'/categories/2',
             }
         ]
     },

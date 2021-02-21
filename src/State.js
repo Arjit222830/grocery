@@ -22,12 +22,13 @@ const reducer= (state, action)=>{
         case "signOut":
             return {...state, isSignedIn: false, username: null};
         case "fetchProducts":
-            console.log(action.type);
+            return {...state, form: _.mapKeys(action.payload,'id')};
+        case "fetchProductsWithId":
             return {...state, form: _.mapKeys(action.payload,'id')};
         case "fetchProduct":
             return { ...state, form: {[action.payload.id]: action.payload }};
         case "createProduct":
-            return { ...state,  [action.payload.id]: action.payload };
+            return { ...state, form: {...state.form, [action.payload.id]: action.payload }};
         case "editProduct":
             return { ...state, form: {...state.form,[action.payload.id]: action.payload} };
         case "deleteProduct":

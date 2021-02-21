@@ -36,6 +36,14 @@ export const fetchProducts = async () => {
     }
 };
 
+export const fetchProductsWithId = async (id) => {
+    const response = await axios.get(`/products/${id}`);
+    return {
+        type: 'fetchProductsWithId', 
+        payload: response.data
+    }
+};
+
 export const createProduct= async(formValues)=>{
     const response= await axios.post('/products', formValues);
     return {

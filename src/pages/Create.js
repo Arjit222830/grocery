@@ -22,12 +22,10 @@ const Create= (props)=>{
     setInitialValues();
 
     if(!state.isSignedIn)
-        return <GoogleAuth />
+        return <></>;
     
     return (
         <>
-            <GoogleAuth />
-            <Title />
             <Form props={props} formData={formData} action='create' />
         </>
     );

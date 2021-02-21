@@ -36,8 +36,6 @@ const Edit= (props)=>{
 
     return (
         <>
-            <GoogleAuth />
-            <Title />
             <Form props={props} formData={formData} action="edit" id={id} />
         </>
     );

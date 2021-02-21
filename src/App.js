@@ -10,6 +10,8 @@ import Home from './pages/Home';
 import Edit from './pages/Edit';
 import Create from './pages/Create';
 import Products from './pages/Products';
+import GoogleAuth from './Components/GoogleAuth';
+import Title from './Components/Title';
 
 import {openSidebar} from './actions';
 import {AppContext} from "./State";
@@ -22,10 +24,10 @@ const App = ()=>{
   const [val,setVal]= useState('2');
 
   useEffect(()=>{
-  if(state.openSidebar)
-    setVal('2');
-  else
-    setVal('0');
+    if(state.openSidebar)
+      setVal('2');
+    else
+      setVal('0');
   },[state.openSidebar])
   
   console.log(state);
@@ -61,6 +63,8 @@ const App = ()=>{
           </div>
         
           <div className={`col-sm-${10-val}`}>
+            <GoogleAuth />
+            <Title />
             <Switch>
               <Route path="/"  exact component= {Home} />
               <Route path="/categories/:id" exact component= {Products} />

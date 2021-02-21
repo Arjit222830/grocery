@@ -10,24 +10,22 @@ import {fetchProducts} from '../actions';
 import '../App.css';
 
   
-const Home= ()=> {
+const Home= (props)=> {
 
     const {state, dispatch}=  useContext(AppContext);
     console.log(state);
 
     useEffect(async()=>{
         dispatch(await fetchProducts());
+        console.log('hel');
     },[]);
 
-
+    console.log(state.isSignedIn);
     if(!state.isSignedIn)
-        return <GoogleAuth />;
+        return <></>;
 
     return (
         <div className="container-fluid text-center">
-
-            <GoogleAuth />
-            <Title />
 
             <Grid container spacing={2}>
                 <Grid item>
