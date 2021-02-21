@@ -1,4 +1,4 @@
-import React,{useState, useContext, useRef, createRef} from 'react';
+import React,{useState, useEffect, useContext, useRef, createRef} from 'react';
 import { useHistory } from "react-router-dom";
 
 import {AppContext} from "../../State";
@@ -77,7 +77,6 @@ const Form = (props)=>{
                     type={ob.type}
                     placeholder={ob.placeholder}
                     value={ob.initial_value}
-                    enum={ob.enum}
                     onChange= {handleChange}
                     validation=  {ob.validation}
                     action={props.action}

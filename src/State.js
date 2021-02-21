@@ -8,7 +8,9 @@ const initialState= {
     err: false,
     isSignedIn: null,
     username: null,
-    form: []
+    form: [],
+    categories:[],
+    subCategories:[]
 }
 
 const reducer= (state, action)=>{
@@ -22,17 +24,22 @@ const reducer= (state, action)=>{
         case "signOut":
             return {...state, isSignedIn: false, username: null};
         case "fetchProducts":
-            return {...state, form: _.mapKeys(action.payload,'id')};
-        case "fetchProductsWithId":
-            return {...state, form: _.mapKeys(action.payload,'id')};
+            return {...state, form: _.mapKeys(action.payload,'_id')};
+        case "fetchProductsWithCategory":
+            return {...state, form: _.mapKeys(action.payload,'_id')};
         case "fetchProduct":
-            return { ...state, form: {[action.payload.id]: action.payload }};
+            return { ...state, form: {[action.payload._id]: action.payload }};
         case "createProduct":
-            return { ...state, form: {...state.form, [action.payload.id]: action.payload }};
+            return { ...state, form: {...state.form, [action.payload._id]: action.payload }};
         case "editProduct":
-            return { ...state, form: {...state.form,[action.payload.id]: action.payload} };
+            return { ...state, form: {...state.form,[action.payload._id]: action.payload} };
         case "deleteProduct":
-            return {...state,form:_.omit(state.form, action.payload)};
+            return {...state, form: _.omit(state.form, action.payload)};
+        case "fetchCategories":
+            console.log(action.payload);
+            return {...state, categories: action.payload};
+        case "fetchSubCategories":
+            return {...state,subCategories: action.payload};
         default:
             return {...state};
     }

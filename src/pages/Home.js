@@ -1,18 +1,16 @@
-import React,{useState,useEffect,useContext} from 'react';
+import React,{useEffect,useContext} from 'react';
 
 import {AppContext} from "../State";
 import Grid from '@material-ui/core/Grid';
 import Card from '../Components/Card';
-import GoogleAuth from '../Components/GoogleAuth';
-import Title from '../Components/Title';
 import {fetchProducts} from '../actions';
 
 import '../App.css';
-
   
 const Home= (props)=> {
 
     const {state, dispatch}=  useContext(AppContext);
+
     console.log(state);
 
     useEffect(async()=>{
@@ -33,7 +31,7 @@ const Home= (props)=> {
                         {Object.values(state.form).map((item,index)=>{
                             return (
                             <Grid key={index} item xs>
-                                <Card id={item.id}/>
+                                <Card id={item._id}/>
                             </Grid>
                             );
                         })}

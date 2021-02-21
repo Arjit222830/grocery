@@ -29,23 +29,23 @@ export const signOut = ()=>{
 
 
 export const fetchProducts = async () => {
-    const response = await axios.get('/products');
+    const response = await axios.get('/product');
     return {
         type: 'fetchProducts', 
         payload: response.data
     }
 };
 
-export const fetchProductsWithId = async (id) => {
-    const response = await axios.get(`/products/${id}`);
+export const fetchProductsWithCategory = async (id) => {
+    const response = await axios.get(`/product/category/${id}`);
     return {
-        type: 'fetchProductsWithId', 
+        type: 'fetchProductsWithCategory', 
         payload: response.data
     }
 };
 
 export const createProduct= async(formValues)=>{
-    const response= await axios.post('/products', formValues);
+    const response= await axios.post('/product/new', formValues);
     return {
         type: 'createProduct',
         payload: response.data
@@ -54,7 +54,7 @@ export const createProduct= async(formValues)=>{
 
 export const editProduct = async(id, formValues) =>{
     console.log("hrl");
-    const response=  await axios.patch(`/products/${id}`, formValues);
+    const response=  await axios.put(`/product/update/${id}`, formValues);
     console.log(response.data);
     return { 
         type: 'editProduct', 
@@ -63,7 +63,7 @@ export const editProduct = async(id, formValues) =>{
 };
 
 export const fetchProduct= async (id) => {
-    const response = await axios.get(`/products/${id}`);
+    const response = await axios.get(`/product/${id}`);
     return { 
         type: 'fetchProduct', 
         payload:response.data
@@ -71,9 +71,23 @@ export const fetchProduct= async (id) => {
 };
 
 export const deleteProduct = async (id)=> {
-    await axios.delete(`/products/${id}`);
+    await axios.delete(`/product/delete/${id}`);
     return {
         type: 'deleteProduct',
         payload: id
     }
 }
+
+export const fetchCategories= (data) => {
+    return { 
+        type: 'fetchCategories', 
+        payload:data
+    }
+};
+
+export const fetchSubCategories= (data) => {
+    return { 
+        type: 'fetchSubCategories', 
+        payload:data
+    }
+};

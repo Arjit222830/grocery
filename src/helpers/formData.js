@@ -2,10 +2,9 @@
 export const formData= [
     {
         label: 'Name',
-        name: 'name',
+        name: 'productName',
         placeholder: 'Enter a name of product',
         type: 'text',
-        enum: [],
         validation: 'required'
     },
     {
@@ -13,7 +12,6 @@ export const formData= [
         name: 'description',
         placeholder: 'Enter a description',
         type: 'text',
-        enum: [],
         validation: 'required|min:6'
     },
     {
@@ -21,15 +19,13 @@ export const formData= [
         name: 'price',
         placeholder: 'Enter a price',
         type: 'text',
-        enum: [],
         validation: 'required'
     },
     {
         label: 'Image',
-        name: 'image',
+        name: 'images',
         placeholder: 'Enter a image',
         type: 'file',
-        enum: [],
         validation: 'required'
     },
     {
@@ -37,15 +33,13 @@ export const formData= [
         name: 'category',
         placeholder: 'Choose a category',
         type: 'select',
-        enum: ['1','2','3'],
         validation: 'required'
     },
     {
         label: 'Sub-Category',
-        name: 'sub_category',
+        name: 'subcategory',
         placeholder: 'Enter a Sub-Category',
         type: 'select',
-        enum: ['1','2','3'],
         validation: 'required'
     },
     {
@@ -53,15 +47,13 @@ export const formData= [
         name: 'weight',
         placeholder: 'Enter a Weight',
         type: 'number',
-        enum: [],
         validation: 'required'
     },
     {
         label: 'Measured Unit',
-        name: 'unit',
+        name: 'measureUnit',
         placeholder: 'Enter a unit of measurement',
         type: 'text',
-        enum: [],
         validation: 'required'
     }
 ];

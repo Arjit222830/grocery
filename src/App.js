@@ -15,11 +15,25 @@ import Title from './Components/Title';
 
 import {openSidebar} from './actions';
 import {AppContext} from "./State";
+import {categoriesConstant} from './helpers/categoriesConstant';
+import {fetchCategories} from './actions';
+import {fetchSubCategories} from './actions'
 
 
 const App = ()=>{
   
   const {state, dispatch}=  useContext(AppContext);
+
+  useEffect(async ()=>{
+    var ar1=[];var ar2=[];
+    await Object.values(categoriesConstant()).map((p)=>{
+        ar1.push({id:p.NAME, name: p.NAME});
+        for (const [key, value] of Object.entries(p.SUBCATEGORIES)) 
+            ar2.push({id:key, name:value})
+    });
+    dispatch(fetchCategories(ar1));
+    dispatch(fetchSubCategories(ar2))
+  },[]);
 
   const [val,setVal]= useState('2');
 

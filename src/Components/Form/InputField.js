@@ -13,6 +13,14 @@ const InputField= forwardRef((props,ref)=>{
 
     const [value, setValue]= useState(props.value);
     const [error,setError]= useState('');
+    const [ar,setAr]= useState([]);
+
+    useEffect(()=>{
+        if(props.name=="category")
+            setAr(state.categories);
+        else
+            setAr(state.subCategories);
+    })
 
     const handleChange= (event)=>{
         setValue(event.target.value);
@@ -39,18 +47,21 @@ const InputField= forwardRef((props,ref)=>{
             return (
                 <select name={props.name} style={styleWidth()} onChange={(e)=>handleChange(e)}>
                     <option value=""></option>
-                    {props.enum.map((item,key)=>{
-                        return <option value={item} key={key}>{item}</option>
+                    {ar.map((item,key)=>{
+                        return <option value={item.id} key={key}>{item.name}</option>
                     })}
                 </select>
             );
         
         return (
             <select name={props.name} style={styleWidth()} onChange={(e)=>handleChange(e)}>
-                <option value={props.value}>{props.value}</option>
-                {props.enum.map((item,key)=>{
-                    if(item!=props.value)
-                        return <option value={item} key={key}>{item}</option>
+                {ar.map((item,key)=>{
+                    if(item.id==props.value)
+                        return <option value={item.id} key={key}>{item.name}</option>
+                })}
+                {ar.map((item,key)=>{
+                    if(item.id!=props.value)
+                        return <option value={item.id} key={key}>{item.name}</option>
                 })}
             </select>
         )

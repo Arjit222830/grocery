@@ -5,7 +5,7 @@ import Grid from '@material-ui/core/Grid';
 import Card from '../Components/Card';
 import GoogleAuth from '../Components/GoogleAuth';
 import Title from '../Components/Title';
-import {fetchProducts} from '../actions';
+import {fetchProductsWithCategory} from '../actions';
 
 import '../App.css';
 
@@ -16,8 +16,7 @@ const Products= (props)=> {
     console.log(state);
 
     useEffect(async()=>{
-        //dispatch(await fetchProductsWithId(props.match.params.id));
-        dispatch(await fetchProducts());
+        dispatch(await fetchProductsWithCategory(props.match.params.id));
         console.log('hel');
     },[]);
 
@@ -34,7 +33,7 @@ const Products= (props)=> {
                         {Object.values(state.form).map((item,index)=>{
                             return (
                             <Grid key={index} item xs>
-                                <Card id={item.id}/>
+                                <Card id={item._id}/>
                             </Grid>
                             );
                         })}

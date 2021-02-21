@@ -1,0 +1,12 @@
+export const GROCERY = 'GROCERY';
+export const HOUSEHOLD_ITEMS = 'HOUSEHOLD_ITEMS';
+export const PERSONAL_CARE = 'PERSONAL_CARE';
+export const FRUITS_AND_VEGETABLE = 'FRUITS_AND_VEGETABLE';
+export const BEVERAGES = 'BEVERAGES';
+export const BREAKFAST_AND_DAIRY = 'BREAKFAST_AND_DAIRY';
+export const INSTANT_FOOD = 'INSTANT_FOOD';
+export const CHOCOLATES_AND_ICE_CREAM = 'CHOCOLATES_AND_ICE-CREAM';
+export const BISCUTE_AND_SNACK = 'BISCUTE_AND_SNACK';
+
+export const SUBCATEGORIES = 'subcategories';
+export const NAME = 'name';

@@ -18,6 +18,8 @@ const Edit= (props)=>{
         dispatch(await fetchProducts());
     },[]);
 
+    const id= props.match.params.id;
+
     const setInitialValues=()=>{
             
         for(var i=0;i<formData.length;i++){
@@ -27,7 +29,6 @@ const Edit= (props)=>{
         }
     }
 
-    const id= props.match.params.id;
 
     if(!state.form[id])
         return <>Loading...</>;

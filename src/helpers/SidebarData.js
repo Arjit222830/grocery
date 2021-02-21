@@ -12,14 +12,19 @@ export const SidebarData =[
         link:'/categories',
         children: [
             {
-                title:'Sub1',
+                title:'1',
                 icon:<HomeOutlinedIcon fontSize='large' />,
-                link:'/categories/1',
+                link:'/categories/#1234',
             },
             {
-                title:'Sub2',
+                title:'2',
                 icon:<HomeOutlinedIcon fontSize='large' />,
-                link:'/categories/2',
+                link:'/categories/#2345',
+            },
+            {
+                title:'3',
+                icon:<HomeOutlinedIcon fontSize='large' />,
+                link:'/categories/#3456',
             }
         ]
     },
