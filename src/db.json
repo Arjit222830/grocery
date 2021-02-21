@@ -4,12 +4,45 @@
       "name": "nknjkn",
       "description": "mklmklmlk",
       "price": "232",
-      "image": "C:\\fakepath\\WhatsApp Image 2021-01-13 at 7.48.45 PM.jpeg",
-      "category": "1",
+      "image": "C:\\fakepath\\IMG_2851.JPG",
+      "category": "3",
       "sub_category": "2",
       "weight": "34",
       "unit": "gh",
       "id": 2
+    },
+    {
+      "name": "nklmlkm",
+      "description": ",kl,mlkm k",
+      "price": "mklmk",
+      "image": "C:\\fakepath\\IMG_2851.JPG",
+      "category": "1",
+      "sub_category": "2",
+      "weight": "6",
+      "unit": "mklm",
+      "id": 3
+    },
+    {
+      "name": "mkmknj",
+      "description": "mlkmkjkl",
+      "price": "njkk",
+      "image": "C:\\fakepath\\IMG_2851.JPG",
+      "category": "1",
+      "sub_category": "1",
+      "weight": "67",
+      "unit": "34",
+      "id": 4
+    },
+    {
+      "name": "mkmknj",
+      "description": "mlkmkjkl",
+      "price": "njkk",
+      "image": "C:\\fakepath\\IMG_2851.JPG",
+      "category": "1",
+      "sub_category": "1",
+      "weight": "67",
+      "unit": "34",
+      "id": 6
     }
   ]
 }

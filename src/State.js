@@ -32,7 +32,6 @@ const reducer= (state, action)=>{
             return { ...state, form: {...state.form,[action.payload.id]: action.payload} };
         case "deleteProduct":
             return {...state,form:_.omit(state.form, action.payload)};
-            //return _.omit(state.form, action.payload);
         default:
             return {...state};
     }

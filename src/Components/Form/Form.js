@@ -42,8 +42,6 @@ const Form = (props)=>{
         })});
     }
 
-    console.log(data);
-
     const submitForm= async(e)=>{
         e.preventDefault();
         let isValid= true;
@@ -82,6 +80,7 @@ const Form = (props)=>{
                     enum={ob.enum}
                     onChange= {handleChange}
                     validation=  {ob.validation}
+                    action={props.action}
                 />
             );
         });

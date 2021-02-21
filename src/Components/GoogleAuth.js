@@ -23,9 +23,7 @@ const GoogleAuth= ()=> {
     },[]);
 
     const onAuthChange= (isSignedIn)=>{
-        console.log(isSignedIn);
         const user= auth.currentUser.get();
-        console.log(user);
         if(isSignedIn)
             dispatch(signIn({name:user.Es.sd, email:user.Es.kt, Id: user.getId()}));
         else
@@ -41,7 +39,6 @@ const GoogleAuth= ()=> {
     }
 
     const renderAuthButton= ()=> {
-        console.log(auth);
         if(state.isSignedIn)
             return (
                 <button onClick={onSignOutClick} className="ui red google button">

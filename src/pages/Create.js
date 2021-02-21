@@ -17,8 +17,6 @@ const Create= (props)=>{
             if(formData[i].type!="file")
                 formData[i].initial_value='';
         }
-
-        console.log(formData);
     }
 
     setInitialValues();

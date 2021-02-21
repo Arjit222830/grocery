@@ -44,9 +44,10 @@ const Sidebar= (props)=>{
 
     if(!state.openSidebar)
         return (
-            <div className="no-sidebar">
+            /*<div className="no-sidebar">
                 <ArrowForwardIosIcon id="top-icon" fontSize='large' color='primary' style={{color:'black',fontSize: '50px'}} onClick={()=>dispatch(openSidebar(true))} />
-            </div>
+            </div>*/
+            <></>
         );
 
     return (

@@ -20,7 +20,7 @@ const Cards = (props) =>{
     if(state.openSidebar)
         return {width:'300px', transition: 'width 1s'};
     
-    return {width:'425px', transition: 'width 1s'};
+    return {width:'300px', transition: 'width 1s'};
   }
 
   return (

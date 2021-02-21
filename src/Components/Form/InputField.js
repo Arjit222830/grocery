@@ -34,8 +34,8 @@ const InputField= forwardRef((props,ref)=>{
         return {width:'90vw', transition: 'width 1s'};
     }
 
-    const selection= ()=>{
-        if(props.type=='select')
+    const select= ()=>{
+        if(props.action=="create")
             return (
                 <select name={props.name} style={styleWidth()} onChange={(e)=>handleChange(e)}>
                     <option value=""></option>
@@ -44,6 +44,21 @@ const InputField= forwardRef((props,ref)=>{
                     })}
                 </select>
             );
+        
+        return (
+            <select name={props.name} style={styleWidth()} onChange={(e)=>handleChange(e)}>
+                <option value={props.value}>{props.value}</option>
+                {props.enum.map((item,key)=>{
+                    if(item!=props.value)
+                        return <option value={item} key={key}>{item}</option>
+                })}
+            </select>
+        )
+    }
+
+    const selection= ()=>{
+        if(props.type=='select')
+           return select();
 
         return (
             <Input
