@@ -36,10 +36,11 @@ export const fetchProducts = async () => {
     }
 };
 
-export const fetchProductsWithCategory = async (id) => {
-    const response = await axios.get(`/product/category/${id}`);
+export const fetchProductsWithSubCategory = async (id) => {
+    console.log(id);
+    const response = await axios.get(`/product/subcategory/${id}`,{headers: {'id': id}});
     return {
-        type: 'fetchProductsWithCategory', 
+        type: 'fetchProductsWithSubCategory', 
         payload: response.data
     }
 };

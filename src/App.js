@@ -10,6 +10,7 @@ import Home from './pages/Home';
 import Edit from './pages/Edit';
 import Create from './pages/Create';
 import Products from './pages/Products';
+import SubCategories from './pages/SubCategories';
 import GoogleAuth from './Components/GoogleAuth';
 import Title from './Components/Title';
 
@@ -81,7 +82,8 @@ const App = ()=>{
             <Title />
             <Switch>
               <Route path="/"  exact component= {Home} />
-              <Route path="/categories/:id" exact component= {Products} />
+              <Route path="/categories/:id" exact component= {SubCategories} />
+              <Route path="/categories/products/:id" exact component= {Products} />
               <Route path="/create" exact component= {Create} />
               <Route path="/edit/:id" exact component= {Edit} />
             </Switch>

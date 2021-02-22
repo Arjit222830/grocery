@@ -25,7 +25,7 @@ const reducer= (state, action)=>{
             return {...state, isSignedIn: false, username: null};
         case "fetchProducts":
             return {...state, form: _.mapKeys(action.payload,'_id')};
-        case "fetchProductsWithCategory":
+        case "fetchProductsWithSubCategory":
             return {...state, form: _.mapKeys(action.payload,'_id')};
         case "fetchProduct":
             return { ...state, form: {[action.payload._id]: action.payload }};

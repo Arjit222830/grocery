@@ -54,7 +54,7 @@ const Sidebar= (props)=>{
         <div className="sidebar">
             <ViewHeadlineIcon id="top-icon" fontSize='large' color='primary' style={{color:'white',fontSize: '50px'}} onClick={()=>dispatch(openSidebar(false))} />
             <ul className="sidebar-list">
-                {SidebarData.map((val,key)=>{
+                {SidebarData(state).map((val,key)=>{
                     return (
                         <div key={key}>
                             <Link to={val.link} onClick={val.children && showSubNav}>

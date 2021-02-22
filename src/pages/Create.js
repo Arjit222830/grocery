@@ -1,10 +1,8 @@
 import React, { useEffect, useContext } from 'react';
 
 import {AppContext} from "../State";
-import Title from '../Components/Title';
 import Form from '../Components/Form/Form';
 import {formData} from '../helpers/formData';
-import GoogleAuth from '../Components/GoogleAuth';
 
 import '../App.css'
 

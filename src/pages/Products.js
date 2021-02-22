@@ -3,21 +3,18 @@ import React,{useState,useEffect,useContext} from 'react';
 import {AppContext} from "../State";
 import Grid from '@material-ui/core/Grid';
 import Card from '../Components/Card';
-import GoogleAuth from '../Components/GoogleAuth';
-import Title from '../Components/Title';
-import {fetchProductsWithCategory} from '../actions';
+import {fetchProductsWithSubCategory} from '../actions';
 
 import '../App.css';
 
   
 const Products= (props)=> {
 
-    const {state, dispatch}=  useContext(AppContext);
+    const {state, dispatch}= useContext(AppContext);
     console.log(state);
 
     useEffect(async()=>{
-        dispatch(await fetchProductsWithCategory(props.match.params.id));
-        console.log('hel');
+        dispatch(await fetchProductsWithSubCategory(props.match.params.id+props.location.hash));
     },[]);
 
     console.log(state.isSignedIn);
@@ -33,7 +30,7 @@ const Products= (props)=> {
                         {Object.values(state.form).map((item,index)=>{
                             return (
                             <Grid key={index} item xs>
-                                <Card id={item._id}/>
+                                <Card id={item._id} name={item.productName} />
                             </Grid>
                             );
                         })}
