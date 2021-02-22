@@ -37,8 +37,9 @@ export const fetchProducts = async () => {
 };
 
 export const fetchProductsWithSubCategory = async (id) => {
+    id= id.replace(/#/gi, "%23");
+    const response = await axios.get(`/product/subcategory/${id}`);
     console.log(id);
-    const response = await axios.get(`/product/subcategory/${id}`,{headers: {'id': id}});
     return {
         type: 'fetchProductsWithSubCategory', 
         payload: response.data
